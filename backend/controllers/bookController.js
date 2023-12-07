@@ -41,7 +41,8 @@ export const getBooks = (req, res) => {
 
 export const postBooks = (req, res) => {
 
-    book.id = uuidv4(); 
+    const book = req.body;
+    book.id = uuidv4(); // random ID generated 
     books.push(book);
 
     res.status(201).json({ added: true, data: book}); 
