@@ -38,10 +38,8 @@ app.use("*", notFound)
 app.use( (err, req, res, next) => {
 
     if(process.env.NODE_ENV === "development") {
-       
         res.status(500).send("Ein Fehler ist aufgetreten")
-    } else {
-       
+    } else { 
          res.status(500).send(err.message);
          console.error(err)
     }
